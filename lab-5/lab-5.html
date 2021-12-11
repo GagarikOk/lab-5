@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+  content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <style>
+  body{
+    margin-top: 70px;
+    background: #333;
+    color: #fff;
+  }
+  </style>
+
+  <title>Length Convertor</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-3"> Length Converter</h1>
+        <form>
+          <div class="form-group">
+            <input id="mInput" type="number"
+            class="form-control form-control-lg mb-3"
+            placeholder="Enter Meters....">
+
+            <div>
+            <input id="btn1" value="Go" type="button" name="Go" color="black"  class="btn button-danger offset-md-5 mb-1"/>
+            </div>
+          </div>
+        </form>
+
+        <div id="output">
+
+          <div class="card card-success mb-2">
+            <div class="card-block">
+              <h4>Centimeter: </h4>
+              <div id="cmOutput"></div>
+            </div>
+          </div>
+		  <div class="card card-primary mb-2">
+            <div class="card-block">
+              <h4>Millimeter: </h4>
+              <div id="mmOutput"></div>
+            </div>
+          </div>
+
+          <div class="card card-danger mb-2">
+            <div class="card-block">
+              <h4>Foot: </h4>
+              <div id="footOutput"></div>
+            </div>
+          </div>
+		  <div class="card card-info mb-2">
+            <div class="card-block">
+              <h4>Inch: </h4>
+              <div id="inchOutput"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+
+document.getElementById('mInput').addEventListener('input',
+function(e){
+  let m = e.target.value;
+  document.getElementById('btn1').addEventListener('click',function(){
+  document.getElementById('cmOutput').innerHTML= (m*100).toFixed(2);
+  document.getElementById('mmOutput').innerHTML = (m*1000).toFixed(2);
+  document.getElementById('footOutput').innerHTML= (m*3.28084).toFixed(3);
+  document.getElementById('inchOutput').innerHTML= (m*39.3701).toFixed(3);
+  });
+});
+
+</script>
+</body>
+</html>
